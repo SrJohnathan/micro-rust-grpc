@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package service_routes;
+
+service  MessageType {
+  rpc SendMessage(Message) returns (Res);
+}
+
+message Message{
+  int64 id = 1;
+  string data = 2;
+  int32  type = 3;
+}
+
+message Res{
+  bool res = 1;
+  string data = 2;
+
+}

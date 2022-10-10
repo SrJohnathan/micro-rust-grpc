@@ -1,25 +1,7 @@
-[package]
-name = "services_chat_app"
-version = "0.1.0"
-edition = "2021"
+[workspace]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-tonic = { version="0.7.2",features = ["tls"] }
-tokio = { version = "1", features = ["full"] }
-prost = "0.10"
-prost-types = "0.10"
-diesel = { version = "1.4.4", features = ["postgres"] }
-dotenv = "0.15.0"
-chrono = "0.4.19"
-async-trait = "0.1.50"
-serde = "1.0"
-serde_json = "1.0"
-serde_derive = "1.0"
-tokio-diesel = {git = "https://github.com/mehcode/tokio-diesel"}
-
-
-
-[build-dependencies]
-tonic-build = "*"
+members = [
+    "jcore",
+    "migre",
+    "users"
+]

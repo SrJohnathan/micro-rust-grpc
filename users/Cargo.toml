@@ -1,0 +1,19 @@
+[package]
+name = "users"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+
+
+[dependencies]
+migre = { path = "../migre" , features = ["jcore"]}
+serde_json = "1.0"
+serde_derive = "1.0"
+serde = "1.0"
+diesel = { version = "2.0.1", features = ["postgres","r2d2", "uuid", "chrono"] }
+diesel_migrations = "2.0.0"
+tokio-diesel = {git = "https://github.com/mehcode/tokio-diesel"}
+

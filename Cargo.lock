@@ -145,9 +145,11 @@ version = "1.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b28135ecf6b7d446b43e27e225622a038cc4e2930a1022f51cdb97ada19b8e4d"
 dependencies = [
+ "bitflags",
  "byteorder",
  "diesel_derives 1.4.1",
- "r2d2",
+ "pq-sys",
+ "uuid 0.8.2",
 ]
 
 [[package]]
@@ -163,7 +165,7 @@ dependencies = [
  "itoa",
  "pq-sys",
  "r2d2",
- "uuid",
+ "uuid 1.2.1",
 ]
 
 [[package]]
@@ -354,7 +356,7 @@ dependencies = [
  "dotenv",
  "futures",
  "tokio",
- "uuid",
+ "uuid 1.2.1",
 ]
 
 [[package]]
@@ -733,13 +735,14 @@ dependencies = [
 [[package]]
 name = "tokio-diesel"
 version = "0.3.0"
-source = "git+https://github.com/mehcode/tokio-diesel#f4af42558246ab323600622ba8d08803d3c18842"
 dependencies = [
  "async-trait",
  "diesel 1.4.8",
+ "diesel 2.0.1",
  "futures",
  "r2d2",
  "tokio",
+ "uuid 1.2.1",
 ]
 
 [[package]]
@@ -786,6 +789,12 @@ dependencies = [
  "serde_json",
  "tokio-diesel",
 ]
+
+[[package]]
+name = "uuid"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bc5cf98d8186244414c848017f0e2676b3fcb46807f6668a97dfe67359a3c4b7"
 
 [[package]]
 name = "uuid"

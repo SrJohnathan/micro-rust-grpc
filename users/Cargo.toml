@@ -15,5 +15,6 @@ serde_derive = "1.0"
 serde = "1.0"
 diesel = { version = "2.0.1", features = ["postgres","r2d2", "uuid", "chrono"] }
 diesel_migrations = "2.0.0"
-tokio-diesel = {git = "https://github.com/mehcode/tokio-diesel"}
+#tokio-diesel = {git = "https://github.com/mehcode/tokio-diesel"}
+tokio-diesel = {path = "../tokio-diesel"}
 

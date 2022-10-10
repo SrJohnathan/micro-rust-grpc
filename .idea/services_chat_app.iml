@@ -10,6 +10,9 @@
       <sourceFolder url="file://$MODULE_DIR$/migre/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/users/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tokio-diesel/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tokio-diesel/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tokio-diesel/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/migre/target" />
     </content>

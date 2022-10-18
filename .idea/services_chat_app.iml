@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tokio-diesel/examples" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tokio-diesel/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tokio-diesel/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/users/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/migre/target" />
     </content>

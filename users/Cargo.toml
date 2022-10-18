@@ -13,8 +13,15 @@ migre = { path = "../migre" , features = ["jcore"]}
 serde_json = "1.0"
 serde_derive = "1.0"
 serde = "1.0"
-diesel = { version = "2.0.1", features = ["postgres","r2d2", "uuid", "chrono"] }
+diesel = { version = "2.0.2", features = ["postgres","r2d2", "uuid", "chrono"] }
 diesel_migrations = "2.0.0"
-#tokio-diesel = {git = "https://github.com/mehcode/tokio-diesel"}
-tokio-diesel = {path = "../tokio-diesel"}
+tokio-diesel = {git = "https://github.com/SrJohnathan/tokio-diesel"  }
+
+
+
+[dev-dependencies]
+diesel = { version = "2.0.0", default-features = false, features = ["postgres","uuid"] }
+uuid = { version = "1.2.1", features = ["v4"] }
+tokio = { version = "1", default-features = false, features = ["full"] }
+
 

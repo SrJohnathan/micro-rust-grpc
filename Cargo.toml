@@ -4,4 +4,6 @@ members = [
     "jcore",
     "migre",
     "users",
+    "http_serve",
+    "auth_micro"
 ]

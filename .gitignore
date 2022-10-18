@@ -2,3 +2,4 @@
 /.env
 /.env-dev
 /users/.env
+/auth_micro/.env

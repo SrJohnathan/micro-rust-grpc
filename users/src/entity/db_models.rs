@@ -43,6 +43,20 @@ pub struct NewAuth {
     pub last_login: Option<String>,
 }
 
+
+#[derive(Insertable, Debug, Serialize, Deserialize, AsChangeset)]
+#[diesel(table_name = auth)]
+pub struct AuthResponse {
+    pub id: i32,
+    pub name: String,
+    pub numero: Option<String>,
+    pub serie: String,
+    pub email: String,
+    pub id_firebase: String,
+    pub token_firebase: Option<String>,
+
+}
+
 #[derive(Queryable, Debug,Serialize, Deserialize)]
 pub struct AuthLogin {
     pub password: String,
@@ -53,7 +67,6 @@ pub struct AuthLogin {
 #[derive(Debug,Serialize, Deserialize)]
 pub struct AuthRes{
     pub id: i32,
-    pub password: String,
     pub email: String,
     pub token: String,
 

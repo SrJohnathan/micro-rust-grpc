@@ -1,13 +1,29 @@
 use std::error::Error;
 use std::fmt::{Debug, Formatter};
-use diesel::{PgConnection};
-use diesel::r2d2::{ConnectionManager, Pool};
+use std::ops::Deref;
+use std::path::Path;
+use std::str::FromStr;
+use diesel::PgConnection;
+use diesel::r2d2::{ConnectionManager, PooledConnection};
 use diesel_migrations::embed_migrations;
-use migre::jcore::dotenv::dotenv;
+use migre::jcore::dotenv::*;
+
+pub use diesel::r2d2::Pool;
+use crate::jcore::dotenv;
+
+pub type  PgAsyncConnection =  Pool<ConnectionManager<PgConnection>>;
+pub struct   PoolPgAsyncConnection( pub PooledConnection<ConnectionManager<PgConnection>>);
 
 
-pub struct PgAsyncConnection(pub Pool<ConnectionManager<PgConnection>>);
+impl Deref for PoolPgAsyncConnection  {
+    type Target = PgConnection;
 
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+/*
 impl Debug for PgAsyncConnection {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         todo!()
@@ -20,13 +36,18 @@ impl Default for PgAsyncConnection {
     }
 }
 
-pub fn connection(str: String) -> Result<PgAsyncConnection, Box<dyn Error>> {
+
+*/
+pub async  fn connection(str: String) -> Result<PgAsyncConnection> {
+
+
     dotenv().unwrap();
     let db_url = std::env::var(str).unwrap();
-    let manager =
-        ConnectionManager::<PgConnection>::new(db_url);
 
+    println!("{}",db_url);
+
+    let manager = ConnectionManager::<PgConnection>::new(db_url);
+    let pool = Pool::builder().build(manager).unwrap();
    // embed_migrations!();
-
-    Ok(PgAsyncConnection(Pool::builder().build(manager)?))
+    Ok(pool)
 }
